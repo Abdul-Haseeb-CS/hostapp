@@ -1,4 +1,5 @@
 import { useState } from "react";
+import  Navbar from '../homepage/navbar';
 
 export default function VertioCloudHomepage() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -22,258 +23,12 @@ export default function VertioCloudHomepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      {/* Navbar */}
-      <nav className="flex items-center justify-between p-4 lg:px-12 bg-gray-900">
-        <div className="flex items-center space-x-6">
-          <div className="font-bold text-xl mr-4">Vertio</div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
-            <div className="relative group">
-              <button className="flex items-center space-x-1 py-2">
-                <span>Services</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:rotate-90 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 p-4 rounded shadow-lg w-48 z-10">
-                <a href="#" className="block py-2 hover:text-green-400">
-                  Cloud Hosting
-                </a>
-                <a href="#" className="block py-2 hover:text-green-400">
-                  IT Security
-                </a>
-                <a href="#" className="block py-2 hover:text-green-400">
-                  Managed Services
-                </a>
-              </div>
-            </div>
+    <div className="h-[933px] w-full bg-white relative">
 
-            <div className="relative group">
-              <button className="flex items-center space-x-1 py-2">
-                <span>Solutions</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:rotate-90 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 p-4 rounded shadow-lg w-48 z-10">
-                <a href="#" className="block py-2 hover:text-green-400">
-                  For Tax Firms
-                </a>
-                <a href="#" className="block py-2 hover:text-green-400">
-                  For Accountants
-                </a>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <button className="flex items-center space-x-1 py-2">
-                <span>Pricing</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:rotate-90 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-
-            <div className="relative group">
-              <button className="flex items-center space-x-1 py-2">
-                <span>Resources</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:rotate-90 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded flex items-center">
-            <span>Get Started</span>
-            <svg
-              className="w-4 h-4 ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 p-4">
-          <div className="py-2">
-            <button className="flex items-center justify-between w-full py-2">
-              <span>Services</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div className="py-2">
-            <button className="flex items-center justify-between w-full py-2">
-              <span>Solutions</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div className="py-2">
-            <button className="flex items-center justify-between w-full py-2">
-              <span>Pricing</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div className="py-2">
-            <button className="flex items-center justify-between w-full py-2">
-              <span>Resources</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div className="mt-4">
-            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full flex items-center justify-center">
-              <span>Get Started</span>
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
+      
+    <div className="absolute rounded-3xl min-h-screen left-[21px] w-[1300px] top-5 bg-gray-900 text-white">
+          <Navbar/>
 
       {/* Hero Section with Carousel */}
       <div className="relative overflow-hidden">
@@ -524,7 +279,7 @@ export default function VertioCloudHomepage() {
       </div>
 
       {/* Call to Action Banner */}
-      <div className="bg-green-500 p-4 lg:p-6">
+      {/*<div className="bg-green-500 p-4 lg:p-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
           <div className="text-center lg:text-left mb-4 lg:mb-0">
             <h3 className="text-lg lg:text-xl font-medium">
@@ -549,7 +304,10 @@ export default function VertioCloudHomepage() {
             </svg>
           </button>
         </div>
-      </div>
+      </div>*/}
     </div>
+      
+    </div>
+
   );
 }
